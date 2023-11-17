@@ -5,12 +5,12 @@ go:
 go_import_path: github.com/2dust/AndroidLibV2rayLite
 git:
   depth: 5
+jdk:
+  - oraclejdk8
 addons:
   apt:
-    update: true
     packages:
-      - openjdk-8-jdk
-jdk: openjdk8
+      - oracle-java8-installer
 before_script:
 - sudo ntpdate -u time.google.com
 - date
