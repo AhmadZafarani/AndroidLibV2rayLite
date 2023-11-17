@@ -8,11 +8,13 @@ git:
 addons:
   apt:
     update: true
+    packages:
+      - openjdk-8-jdk
+jdk: openjdk8
 before_script:
 - sudo ntpdate -u time.google.com
 - date
 - make all
-- jdk_switcher use openjdk8
 - make downloadGoMobile
 script:
 - make BuildMobile
