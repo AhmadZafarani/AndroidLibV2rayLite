@@ -18,6 +18,7 @@ PATH:=$(PATH):$(GOPATH)/bin
 export PATH
 downloadGoMobile:
 	cd ~ ;curl -L https://raw.githubusercontent.com/2dust/AndroidLibV2rayLite/master/ubuntu-cli-install-android-sdk.sh | sudo bash -
+	java -version
 	ls ~
 	ls ~/android-sdk-linux/
 
