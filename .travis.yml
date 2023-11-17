@@ -12,6 +12,7 @@ before_script:
 - sudo ntpdate -u time.google.com
 - date
 - make all
+- jdk_switcher use openjdk8
 - make downloadGoMobile
 script:
 - make BuildMobile
