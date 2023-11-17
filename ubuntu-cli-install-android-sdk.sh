@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ex
 
 # Thanks to https://gist.github.com/wenzhixin/43cf3ce909c24948c6e7
 # Execute this script in your home directory. Lines 17 and 21 will prompt you for a y/n
@@ -48,13 +48,13 @@ curl -L -o reduce.awk $reduceout
 
 sudo apt-get install gawk
 
-./sdkmanager --verbose --list |awk -f parse.awk > ~/package_to_install
+./sdkmanager --list | awk -f parse.awk > ~/package_to_install
 
 readarray -t filenames < $HOME/package_to_install
 
 cat $HOME/package_to_install
 
-yes|./sdkmanager --verbose "${filenames[@]}" |awk -f reduce.awk
+yes | ./sdkmanager "${filenames[@]}" | awk -f reduce.awk
 
 # If you need additional packages for your app, check available packages with:
 # ./android list sdk --all
