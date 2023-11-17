@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Thanks to https://gist.github.com/wenzhixin/43cf3ce909c24948c6e7
 # Execute this script in your home directory. Lines 17 and 21 will prompt you for a y/n
