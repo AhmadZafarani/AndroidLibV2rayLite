@@ -5,8 +5,8 @@
 
 # Install Oracle JDK 8
 apt-get update
-apt-get install -y openjdk-8-jdk
-sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.*/bin/java
+sudo apt purge default-jre openjdk* oracle-java*
+apt-get install -y openjdk-8-jdk openjdk-8-jre
 apt-get install -y unzip make expect # NDK stuff
 
 # Get SDK tools (link from https://developer.android.com/studio/index.html#downloads)
