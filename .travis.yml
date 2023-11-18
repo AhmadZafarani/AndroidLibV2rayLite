@@ -2,19 +2,18 @@ sudo: required
 language: go
 go:
   - "1.20"
+jdk: oraclejdk8
 go_import_path: github.com/2dust/AndroidLibV2rayLite
 git:
   depth: 5
-jdk:
-  - oraclejdk8
 before_script:
-- java -version
-- sudo ntpdate -u time.google.com
-- date
-- make all
-- make downloadGoMobile
+  - java -version
+  - sudo ntpdate -u time.google.com
+  - date
+  - make all
+  - make downloadGoMobile
 script:
-- make BuildMobile
+  - make BuildMobile
 after_success:
 deploy:
   provider: releases
@@ -24,3 +23,5 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+notifications:
+  email: false
