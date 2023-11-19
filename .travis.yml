@@ -1,5 +1,5 @@
 sudo: required
-language: java
+language: go
 jdk:
   - openjdk8
 go:
